@@ -8,11 +8,18 @@ class Trailingzero{
     }
 
     public static int countZeroes(int input){
-        int count = 0
+        int count = 0;
         for(int i = 5 ; i <= input  ; i = i * 5){
             count = count + input /i; 
         }
         return count;
+    }
+    public static int countZ(int n){
+        int sum =0;
+        for(int i=5;i<=n;i=i*i){
+            sum = sum + (n/i);
+        }
+        return sum;
     }
 
     public static void main(String args[]){
@@ -26,6 +33,7 @@ class Trailingzero{
             factout = factout / 10;
         }
         System.out.println(count);
+        System.out.println("Count"+countZ(input));
 
     }
 }
