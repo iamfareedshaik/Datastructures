@@ -14,9 +14,9 @@ class OddOccurence{
         }
     }
     public static void method2(int[] input){
-        int res = input[0];
-        for(int i=1;i<input.length;i++){
-            res = res^input[i];
+        int res = 0;
+        for (int num : input) {
+            res = res^num;
         }
         System.out.println(res);
     }
