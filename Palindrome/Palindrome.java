@@ -12,6 +12,12 @@ class Palindrome{
         }
         return number == backup;
     }
+    public static boolean recursive(String input, int start, int end){
+        if(start >= end){
+            return true;
+        }
+        return ((input.charAt(start) == input.charAt(end-1)) && recursive(input, start+1, end-1));
+    }
     public static void main(String args[]){
         String type = args[1];
         try{
@@ -21,7 +27,15 @@ class Palindrome{
                 }else{
                 System.out.print("Given Input is not a Palindrome");
                 }
-            }else{
+            }
+            else if(type.toLowerCase().equals("recursive")){
+                if(recursive(args[0],0,args[0].length())){
+                    System.out.print("Palindrome");
+                }else{
+                    System.out.print("Not a Palindrome");
+                }
+            }
+            else{
                 int input = Integer.parseInt(args[0]);
                 if(checkPalinInt(input)){
                     System.out.print("Given Input is a Palindrome");
