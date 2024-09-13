@@ -129,13 +129,13 @@ class Sorting{
 
     int partition(arr, low, high){
         int pivot = arr[high];
-        int i = low;
+        int i = low-1;
         for(int j =low;j<high;j++){
             if(arr[j]<= pivot){
+                i++;
                 int temp = arr[j];
                 arr[j] = arr[i];
                 arr[i] = temp;
-                i++;
             }
         }
         arr[i] = pivot;
